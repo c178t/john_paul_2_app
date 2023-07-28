@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:john_paul_2_app/ccd.dart';
 import 'package:john_paul_2_app/home.dart';
 import 'package:john_paul_2_app/pastor_info.dart';
 
@@ -17,14 +18,14 @@ class _MainAppState extends State<MainApp> {
 
   int pageIndex = 0;
 
-  final pages = [HomePage(), PastorPage()];
+  final pages = [HomePage(), PastorPage(), CCDPage()];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 237, 237, 237)
+          backgroundColor: Color.fromARGB(255, 255, 255, 255)
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Color.fromARGB(255, 237, 237, 237),
@@ -67,6 +68,13 @@ class _MainAppState extends State<MainApp> {
                 Icons.person_2_rounded
               ),
               label: "Pastor Info"
+            ),
+          
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.school_sharp
+              ),
+              label: "CCD Info"
             )
           ],
         ),
