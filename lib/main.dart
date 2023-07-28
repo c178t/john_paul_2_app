@@ -36,7 +36,7 @@ class _MainAppState extends State<MainApp> {
         body: Center(
           child: pages[pageIndex],
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 255, 248, 230),
         appBar: AppBar(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25)
