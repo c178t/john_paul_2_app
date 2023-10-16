@@ -1,10 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:john_paul_2_app/ccd.dart';
 import 'package:john_paul_2_app/home.dart';
 import 'package:john_paul_2_app/pastor_info.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MaterialApp(
+    home: const MainApp(),
+   debugShowCheckedModeBanner: false,
+   )
+  );
 }
 
 class MainApp extends StatefulWidget {
@@ -15,6 +20,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
+
 
   int pageIndex = 0;
 
@@ -53,6 +59,30 @@ class _MainAppState extends State<MainApp> {
           
           onTap: (index) => setState(() {
             pageIndex = index;
+            if(pageIndex == 0) {
+              showModalBottomSheet(
+                useRootNavigator: true,
+                enableDrag: true,
+                context: context, 
+                builder: (context) => Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 0,
+                          blurRadius: 7, 
+                        )
+                      ],
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    
+                  ),
+      );
+            }
           }),
           currentIndex: pageIndex,
           items: [
@@ -82,3 +112,5 @@ class _MainAppState extends State<MainApp> {
     );
   }
 }
+
+

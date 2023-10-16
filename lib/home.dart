@@ -15,67 +15,30 @@ class _HomePageState extends State<HomePage> {
     return Material(
       child: Center(
         child: Scaffold(
-          body: Column(
-            children: [
-              
-              Container(
-                alignment: Alignment.topLeft,
-                color: Color.fromARGB(255, 255, 248, 230),
-                padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
-                child: DefaultTextStyle(
-                  style: GoogleFonts.libreBaskerville(
-                    color: Colors.black,
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold
-                  ),
-                  child: AnimatedTextKit(
-                    animatedTexts: [
-                      RotateAnimatedText(
-                        alignment: Alignment.topLeft,
-                        'Good Morning',
-                        rotateOut: false,
-                        duration: Duration(
-                          seconds: 1
-                        )
-                      )
-                    ],
-                    isRepeatingAnimation: false,  
-                  ),
-                ),
+          body: Container(
+            alignment: Alignment.topLeft,
+            color: Color.fromARGB(255, 255, 248, 230),
+            padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: DefaultTextStyle(
+              style: GoogleFonts.libreBaskerville(
+                color: Colors.black,
+                fontSize: 35,
+                fontWeight: FontWeight.bold
               ),
-              
-            Flexible(
-
-              child: Container(
-                color: Color.fromARGB(255, 255, 248, 230),
-                
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 20, 8, 0),
-                  child: AnimatedContainer(
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  RotateAnimatedText(
+                    alignment: Alignment.topLeft,
+                    'Good Morning',
+                    rotateOut: false,
                     duration: Duration(
-                      seconds: 3
-                    ),
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
-                          spreadRadius: 0,
-                          blurRadius: 7, 
-                        )
-                      ],
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    
-                  ),
-                ),
+                      seconds: 1
+                    )
+                  )
+                ],
+                isRepeatingAnimation: false,  
               ),
-            )
-
-            ],
+            ),
           )
         ),
       ),
