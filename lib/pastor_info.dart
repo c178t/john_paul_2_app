@@ -11,9 +11,9 @@ class PastorPage extends StatelessWidget {
       child: Center(
         child: Container(
                 color: Color.fromARGB(255, 255, 248, 230),
-                constraints: BoxConstraints(                  
-                  minWidth: double.infinity,
-                  minHeight: double.infinity
+                constraints: BoxConstraints(
+                  minHeight: double.infinity,
+                  minWidth: double.infinity
                 ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 20, 8, 150),
