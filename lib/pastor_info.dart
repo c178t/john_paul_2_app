@@ -36,7 +36,7 @@ class PastorPage extends StatelessWidget {
                                     fontWeight: FontWeight.bold
                                     ), 
                                     child: Text(
-                            'Father',
+                            'Vicar',
                             textAlign: TextAlign.center,                      
                             )
                                 )
@@ -58,10 +58,10 @@ class PastorPage extends StatelessWidget {
                         
                         Padding(
                           padding: const EdgeInsets.fromLTRB(0,30,0,0),
-                          child: CircleAvatar(
-                            foregroundImage: AssetImage('assets/Fr-Vinod.png'),
-                            radius: 80,
-                          ),
+                          child: ClipRRect(
+                                  child: Image.asset('assets/Fr-Vinod.png', height: 200,),
+                                  borderRadius: BorderRadius.circular(20),
+                                )
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(0, 15, 0, 0), 
@@ -83,7 +83,7 @@ class PastorPage extends StatelessWidget {
                               Icon(
                                 Icons.mail,
                               ),
-                              Text('vicar@stalphonsacatholicchurch.org')
+                              Text('vicar@sjp2smc.church')
                             ],
                         ),
                         ),
