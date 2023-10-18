@@ -59,30 +59,6 @@ class _MainAppState extends State<MainApp> {
           
           onTap: (index) => setState(() {
             pageIndex = index;
-            if(pageIndex == 0) {
-              showModalBottomSheet(
-                useRootNavigator: true,
-                enableDrag: true,
-                context: context, 
-                builder: (context) => Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
-                          spreadRadius: 0,
-                          blurRadius: 7, 
-                        )
-                      ],
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    
-                  ),
-      );
-            }
           }),
           currentIndex: pageIndex,
           items: [
