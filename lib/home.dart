@@ -47,36 +47,87 @@ class _HomePageState extends State<HomePage> {
               DelayedDisplay(
                 delay: Duration(seconds: 1),
                 slidingBeginOffset: Offset(0, 1),
-                child: Flexible(              
-                 child: Padding(
-                   padding: const EdgeInsets.fromLTRB(8, 20, 8, 0),
-                   child: 
-                   
-                   Container(
-                    child: Text("TEMPORARY: AJSBDKABSDKABSDKABSKDBASKDBA", style: TextStyle(fontSize: 60),),
-                     
-                     decoration: BoxDecoration(
-                       boxShadow: [
-                         BoxShadow(
-                           color: Colors.black.withOpacity(0.5),
-                           spreadRadius: 0,
-                           blurRadius: 7, 
-                         )
-                       ],
-                       borderRadius: BorderRadius.only(
-                         topLeft: Radius.circular(20),
-                         topRight: Radius.circular(20),
-                         bottomLeft: Radius.circular(20),
-                         bottomRight: Radius.circular(20)
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 20, 8, 0),
+                  child: 
+                  
+                  Container(
+                    constraints: BoxConstraints(
+                      minWidth: double.maxFinite
+                    ),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: [
+                       Padding(
+                         padding: const EdgeInsets.fromLTRB(0,12,0,0),
+                         child: DefaultTextStyle(
+                               style: GoogleFonts.libreBaskerville(
+                                      textStyle: TextStyle(decoration: TextDecoration.underline),
+                                       color: Colors.black,
+                                       fontSize: 30,
+                                       fontWeight: FontWeight.bold
+                                       ), 
+                                       child: Text(
+                               'Mass Timings',
+                               textAlign: TextAlign.center,                      
+                               )
+                                   ),
                        ),
-                       color: Color.fromARGB(255, 255, 255, 255),
+                       Padding(
+                         padding: const EdgeInsets.fromLTRB(0,8,0,0),
+                         child: DefaultTextStyle(
+                               style: GoogleFonts.libreBaskerville(
+                                       color: Colors.black,
+                                       fontSize: 24,
+                                       fontWeight: FontWeight.bold
+                                       ), 
+                                       child: Text(
+                               '4:30 pm',
+                               textAlign: TextAlign.center,                      
+                               )
+                                   ),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.fromLTRB(0,100,0,0),
+                         child: DefaultTextStyle(
+                               style: GoogleFonts.libreBaskerville(
+                                      textStyle: TextStyle(decoration: TextDecoration.underline),
+                                       color: Colors.black,
+                                       fontSize: 30,
+                                       fontWeight: FontWeight.bold
+                                       ), 
+                                       child: Text(
+                               'Pinecrest Academy',
+                               textAlign: TextAlign.center,                      
+                               )
+                                   ),
+                       ),
+                       SizedBox(height: 350,),
                        
-                     ),
-                     
+                     ],
+
                    ),
-                 ),
-              
-                          ),
+                    
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          spreadRadius: 0,
+                          blurRadius: 7, 
+                        )
+                      ],
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20)
+                      ),
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      
+                    ),
+                    
+                  ),
+                ),
               )
             ],
           )

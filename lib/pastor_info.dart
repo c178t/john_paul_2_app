@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:john_paul_2_app/Moving%20Container/moving_container.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PastorPage extends StatelessWidget {
