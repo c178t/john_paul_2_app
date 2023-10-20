@@ -2,6 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:delayed_display/delayed_display.dart';
+import 'package:map_launcher/map_launcher.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -53,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   
                   Container(
                     constraints: BoxConstraints(
-                      minWidth: double.maxFinite
+                      minWidth: double.maxFinite,
                     ),
                    child: Column(
                      crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +92,16 @@ class _HomePageState extends State<HomePage> {
                        ),
                        Padding(
                          padding: const EdgeInsets.fromLTRB(0,100,0,0),
-                         child: DefaultTextStyle(
+                         child: TextButton(
+                          onPressed: () async{
+                            final availableMaps = await MapLauncher.installedMaps;
+                            print(availableMaps); 
+                            await availableMaps.first.showMarker(
+                              coords: Coords(34.1376, -84.1712),
+                              title: "Pinecrest Academy",
+                              );
+                          }, 
+                          child: DefaultTextStyle(
                                style: GoogleFonts.libreBaskerville(
                                       textStyle: TextStyle(decoration: TextDecoration.underline),
                                        color: Colors.black,
@@ -97,12 +109,12 @@ class _HomePageState extends State<HomePage> {
                                        fontWeight: FontWeight.bold
                                        ), 
                                        child: Text(
-                               'Pinecrest Academy',
+                               'Pinecrest Academy\nDirections',
                                textAlign: TextAlign.center,                      
                                )
-                                   ),
+                                   ),),                
                        ),
-                       SizedBox(height: 350,),
+                       SizedBox(height: 290,),
                        
                      ],
 
