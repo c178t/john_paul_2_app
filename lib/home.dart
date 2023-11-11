@@ -14,8 +14,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  
+
   @override
   Widget build(BuildContext context) {
+  
+    String timeStr = TimeOfDay.now().period.toString();
+    String timeStr2 = "Good Morning";
+    if (timeStr == "DayPeriod.pm") {
+      timeStr2 = "Good Afternoon";
+      if (int.parse(TimeOfDay.now().hourOfPeriod.toString()) >= 6) {
+          timeStr2 = "Good Evening";
+      }
+    }
+
     return Material(
       child: Center(
         child: Scaffold(
@@ -35,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                     animatedTexts: [
                       RotateAnimatedText(
                         alignment: Alignment.topLeft,
-                        'Good Morning',
+                        timeStr2, //
                         rotateOut: false,
                         duration: Duration(
                           seconds: 1
@@ -114,7 +126,17 @@ class _HomePageState extends State<HomePage> {
                                )
                                    ),),                
                        ),
-                       SizedBox(height: 290,),
+                       SizedBox(
+                        height: 290,
+                        child: ClipRRect(
+                          child: Image.asset('assets/Chapel.jpeg', fit: BoxFit.fill),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20)
+                          ),
+                          
+                          ),
+                        ),
                        
                      ],
 

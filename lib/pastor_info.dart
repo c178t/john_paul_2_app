@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class PastorPage extends StatelessWidget {
   const PastorPage({super.key});
@@ -71,7 +72,13 @@ class PastorPage extends StatelessWidget {
                                 Icon(
                                   Icons.phone,
                                 ),
-                                Text('(630) 901-5724')
+                                TextButton(
+                                  onPressed: () async {
+                                    const number = '016309015724';
+                                    await FlutterPhoneDirectCaller.callNumber(number);
+                                  },
+                                  child: Text('(630) 901-5724')
+                                  )
                               ],
                           ),
                           ),

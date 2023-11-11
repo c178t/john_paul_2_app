@@ -21,7 +21,6 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
 
-
   int pageIndex = 0;
 
   final pages = [HomePage(), PastorPage(), CCDPage()];
@@ -45,7 +44,10 @@ class _MainAppState extends State<MainApp> {
         backgroundColor: Color.fromARGB(255, 255, 248, 230),
         appBar: AppBar(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25)
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+            )
           ),
           title: Text(
             "St. John Paul II Catholic Church",
